@@ -8,7 +8,7 @@ module.exports=function(app,passport){
 
 //Login
 
-	app.get('/login',function(ref,res){
+	app.get('/login',function(req,res){
 		res.render('Partials/login.ejs',{message:req.flash('loginMessage')})
 	});
 

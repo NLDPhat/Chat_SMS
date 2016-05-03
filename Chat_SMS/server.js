@@ -14,7 +14,7 @@ var path=require('path');
 var app=express();
 
 //config
-//	mongoose.connect(configDB.url);
+	mongoose.connect(configDB.url);
 
 // configuew app
 	app.use(morgan('dev'));
