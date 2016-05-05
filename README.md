@@ -1,10 +1,10 @@
-# Homework 2 - *Name of App*
+# Homework 2 - *Chat-SMS"
 
-**Name of your app** Đây là trang web cho phép người dùng gửi tin nhắn. Thời gian nộp: 0h ngày 27/4.
+**Chat-SMS** Đây là trang web cho phép người dùng gửi tin nhắn. Thời gian nộp: 0h ngày 27/4.
 
-Danh sách sinh viên: **Your Name Here**
+Danh sách sinh viên: **1312422-Nguyen Le Duy Phat; 1312157-Cao Xuân Hà**
 
-URL: **Insert your Heroku URL here**
+URL: **mongodb://<dbuser>:<dbpassword>@ds013232.mlab.com:13232/chatsms**
 
 ## Chức năng
 
