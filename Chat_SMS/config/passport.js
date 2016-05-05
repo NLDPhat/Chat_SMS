@@ -14,10 +14,12 @@ module.exports = function(passport){
 		});
 	});
 
+
+// Local - signup
 	passport.use('local-signup', new LocalStrategy({
 		usernameField : 'email',
 		passwordField : 'password',
-		passReqToCallback : true
+//		passReqToCallback : true
 	},
 	function(req,email, password, done){
 		process.nextTick(function(){
@@ -42,4 +44,27 @@ module.exports = function(passport){
 			});
 		});
 	}));
-};
+
+//Local - login
+	passport.use('local-login', new LocalStrategy({
+		usernameField : 'email',
+		passwordField : 'passwords'
+//		passReqToCallback : true
+	},
+	function(req, email, password, done){
+		if (email)
+			email = email.toLowerCase();
+		process.nextTick(function(){
+			User.findOne({ 'local.email' : email}, function(err,user){
+				if(err)
+					return done(err);
+				if(!user)
+					return done(null,false, req.flash('loginMSM', 'No user found.'));
+				if(!user.validPassword(password))
+					return done(null, false, req.flash('loginMSM','Wrong Pass'));
+				else
+					return done(null,user);
+			});
+		});
+	}));
+}
